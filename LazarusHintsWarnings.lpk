@@ -1,0 +1,84 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CONFIG>
+  <Package Version="5">
+    <Name Value="LazarusHintsWarnings"/>
+    <Type Value="RunAndDesignTime"/>
+    <Author Value="Antigravity"/>
+    <CompilerOptions>
+      <Version Value="11"/>
+      <SearchPaths>
+        <UnitOutputDirectory Value="lib/$(TargetCPU)-$(TargetOS)"/>
+      </SearchPaths>
+      <Parsing>
+        <SyntaxOptions>
+          <SyntaxMode Value="ObjFPC"/>
+        </SyntaxOptions>
+      </Parsing>
+    </CompilerOptions>
+    <Description Value="Analisador de Hints e Warnings para Lazarus IDE via IDEIntf, CodeTools, Firebird 5.0 e Ollama IA"/>
+    <License Value="MIT"/>
+    <Version Major="1" Minor="0"/>
+    <Files>
+      <Item>
+        <Filename Value="UHintsWarnings.Config.pas"/>
+        <UnitName Value="UHintsWarnings.Config"/>
+      </Item>
+      <Item>
+        <Filename Value="UHintsWarnings.Database.pas"/>
+        <UnitName Value="UHintsWarnings.Database"/>
+      </Item>
+      <Item>
+        <Filename Value="UHintsWarnings.Model.pas"/>
+        <UnitName Value="UHintsWarnings.Model"/>
+      </Item>
+      <Item>
+        <Filename Value="UHintsWarnings.Ollama.pas"/>
+        <UnitName Value="UHintsWarnings.Ollama"/>
+      </Item>
+      <Item>
+        <Filename Value="UHintsWarnings.Gemini.pas"/>
+        <UnitName Value="UHintsWarnings.Gemini"/>
+      </Item>
+      <Item>
+        <Filename Value="UHintsWarnings.QuickFix.pas"/>
+        <UnitName Value="UHintsWarnings.QuickFix"/>
+      </Item>
+      <Item>
+        <Filename Value="UHintsWarnings.View.pas"/>
+        <UnitName Value="UHintsWarnings.View"/>
+      </Item>
+      <Item>
+        <Filename Value="UHintsWarnings.View.lfm"/>
+        <Type Value="LFM"/>
+      </Item>
+      <Item>
+        <Filename Value="UHintsWarnings.Register.pas"/>
+        <HasRegisterProc Value="True"/>
+        <UnitName Value="UHintsWarnings.Register"/>
+      </Item>
+    </Files>
+    <RequiredPkgs>
+      <Item>
+        <PackageName Value="FCL"/>
+      </Item>
+      <Item>
+        <PackageName Value="LCL"/>
+      </Item>
+      <Item>
+        <PackageName Value="IDEIntf"/>
+      </Item>
+      <Item>
+        <PackageName Value="CodeTools"/>
+      </Item>
+      <Item>
+        <PackageName Value="SQLDBLaz"/>
+      </Item>
+    </RequiredPkgs>
+    <UsageOptions>
+      <UnitPath Value="$(PkgOutDir)"/>
+    </UsageOptions>
+    <PublishOptions>
+      <Version Value="2"/>
+    </PublishOptions>
+  </Package>
+</CONFIG>

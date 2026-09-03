@@ -1,0 +1,20 @@
+# Lazarus & Free Pascal build outputs
+lib/
+backup/
+*.o
+*.ppu
+*.a
+*.compiled
+*.rst
+*.rsj
+*.or
+*.lps
+*.bak
+*~
+
+# IDE specific files
+packagefiles.xml
+
+# Firebird database binary (schema and seeds are tracked in database/*.sql)
+*.fdb
+*.fbk

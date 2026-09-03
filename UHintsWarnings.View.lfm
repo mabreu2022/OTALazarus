@@ -1,0 +1,654 @@
+object HintsWarningsViewForm: THintsWarningsViewForm
+  Left = 250
+  Height = 680
+  Top = 120
+  Width = 1000
+  Caption = 'Analisador de Hints & Warnings'
+  ClientHeight = 680
+  ClientWidth = 1000
+  Color = clBtnFace
+  Font.Color = clWindowText
+  Font.Height = -11
+  Font.Name = 'Sans'
+  OnCreate = FormCreate
+  OnDestroy = FormDestroy
+  LCLVersion = '4.8.0.0'
+  object pnlTop: TPanel
+    Left = 0
+    Height = 72
+    Top = 0
+    Width = 1000
+    Align = alTop
+    BevelOuter = bvNone
+    ClientHeight = 72
+    ClientWidth = 1000
+    Color = clWindow
+    ParentBackground = False
+    ParentColor = False
+    TabOrder = 0
+    object pnlMetricTotal: TPanel
+      Left = 8
+      Height = 56
+      Top = 8
+      Width = 95
+      BevelColor = clSilver
+      BevelInner = bvLowered
+      BevelOuter = bvNone
+      ClientHeight = 56
+      ClientWidth = 95
+      TabOrder = 0
+      object lblTotalVal: TLabel
+        Left = 1
+        Height = 28
+        Top = 4
+        Width = 93
+        Align = alTop
+        Alignment = taCenter
+        Caption = '0'
+        Font.Height = -20
+        Font.Style = [fsBold]
+        ParentColor = False
+      end
+      object lblTotalCaption: TLabel
+        Left = 1
+        Height = 15
+        Top = 32
+        Width = 93
+        Align = alTop
+        Alignment = taCenter
+        Caption = 'Total'
+        Font.Color = clGrayText
+        Font.Height = -11
+        ParentColor = False
+      end
+    end
+    object pnlMetricWarnings: TPanel
+      Left = 108
+      Height = 56
+      Top = 8
+      Width = 95
+      BevelColor = clSilver
+      BevelInner = bvLowered
+      BevelOuter = bvNone
+      ClientHeight = 56
+      ClientWidth = 95
+      TabOrder = 1
+      object lblWarningsVal: TLabel
+        Left = 1
+        Height = 28
+        Top = 4
+        Width = 93
+        Align = alTop
+        Alignment = taCenter
+        Caption = '0'
+        Font.Color = 4165631
+        Font.Height = -20
+        Font.Style = [fsBold]
+        ParentColor = False
+      end
+      object lblWarningsCaption: TLabel
+        Left = 1
+        Height = 15
+        Top = 32
+        Width = 93
+        Align = alTop
+        Alignment = taCenter
+        Caption = 'Warnings'
+        Font.Color = clGrayText
+        Font.Height = -11
+        ParentColor = False
+      end
+    end
+    object pnlMetricHints: TPanel
+      Left = 208
+      Height = 56
+      Top = 8
+      Width = 95
+      BevelColor = clSilver
+      BevelInner = bvLowered
+      BevelOuter = bvNone
+      ClientHeight = 56
+      ClientWidth = 95
+      TabOrder = 2
+      object lblHintsVal: TLabel
+        Left = 1
+        Height = 28
+        Top = 4
+        Width = 93
+        Align = alTop
+        Alignment = taCenter
+        Caption = '0'
+        Font.Color = 14454784
+        Font.Height = -20
+        Font.Style = [fsBold]
+        ParentColor = False
+      end
+      object lblHintsCaption: TLabel
+        Left = 1
+        Height = 15
+        Top = 32
+        Width = 93
+        Align = alTop
+        Alignment = taCenter
+        Caption = 'Hints'
+        Font.Color = clGrayText
+        Font.Height = -11
+        ParentColor = False
+      end
+    end
+    object pnlMetricNotes: TPanel
+      Left = 308
+      Height = 56
+      Top = 8
+      Width = 95
+      BevelColor = clSilver
+      BevelInner = bvLowered
+      BevelOuter = bvNone
+      ClientHeight = 56
+      ClientWidth = 95
+      TabOrder = 3
+      object lblNotesVal: TLabel
+        Left = 1
+        Height = 28
+        Top = 4
+        Width = 93
+        Align = alTop
+        Alignment = taCenter
+        Caption = '0'
+        Font.Color = 32768
+        Font.Height = -20
+        Font.Style = [fsBold]
+        ParentColor = False
+      end
+      object lblNotesCaption: TLabel
+        Left = 1
+        Height = 15
+        Top = 32
+        Width = 93
+        Align = alTop
+        Alignment = taCenter
+        Caption = 'Notes'
+        Font.Color = clGrayText
+        Font.Height = -11
+        ParentColor = False
+      end
+    end
+    object pnlMetricErrors: TPanel
+      Left = 408
+      Height = 56
+      Top = 8
+      Width = 95
+      BevelColor = clSilver
+      BevelInner = bvLowered
+      BevelOuter = bvNone
+      ClientHeight = 56
+      ClientWidth = 95
+      TabOrder = 4
+      object lblErrorsVal: TLabel
+        Left = 1
+        Height = 28
+        Top = 4
+        Width = 93
+        Align = alTop
+        Alignment = taCenter
+        Caption = '0'
+        Font.Color = clRed
+        Font.Height = -20
+        Font.Style = [fsBold]
+        ParentColor = False
+      end
+      object lblErrorsCaption: TLabel
+        Left = 1
+        Height = 15
+        Top = 32
+        Width = 93
+        Align = alTop
+        Alignment = taCenter
+        Caption = 'Erros'
+        Font.Color = clGrayText
+        Font.Height = -11
+        ParentColor = False
+      end
+    end
+    object pnlActionsRight: TPanel
+      Left = 530
+      Height = 60
+      Top = 6
+      Width = 462
+      Anchors = [akTop, akRight]
+      BevelOuter = bvNone
+      ClientHeight = 60
+      ClientWidth = 462
+      TabOrder = 5
+      object lblProjectInfo: TLabel
+        Left = 6
+        Height = 15
+        Top = 6
+        Width = 450
+        AutoSize = False
+        Caption = 'Projeto: (Nenhum projeto ativo compilado)'
+        Font.Color = clNavy
+        Font.Height = -11
+        Font.Style = [fsBold]
+        ParentColor = False
+      end
+      object btnBuildNow: TButton
+        Left = 6
+        Height = 28
+        Top = 26
+        Width = 220
+        Caption = 'Compilar Projeto (F9)'
+        Font.Style = [fsBold]
+        OnClick = btnBuildNowClick
+        TabOrder = 0
+      end
+      object btnPasteLog: TButton
+        Left = 232
+        Height = 28
+        Top = 26
+        Width = 224
+        Caption = 'Colar Log Manual...'
+        OnClick = btnPasteLogClick
+        TabOrder = 1
+      end
+    end
+  end
+  object pnlToolbar: TPanel
+    Left = 0
+    Height = 38
+    Top = 72
+    Width = 1000
+    Align = alTop
+    BevelOuter = bvNone
+    ClientHeight = 38
+    ClientWidth = 1000
+    TabOrder = 1
+    object chkFilterWarnings: TCheckBox
+      Left = 10
+      Height = 23
+      Top = 8
+      Width = 78
+      Caption = 'Warnings'
+      Checked = True
+      OnChange = OnFilterChanged
+      State = cbChecked
+      TabOrder = 0
+    end
+    object chkFilterHints: TCheckBox
+      Left = 96
+      Height = 23
+      Top = 8
+      Width = 53
+      Caption = 'Hints'
+      Checked = True
+      OnChange = OnFilterChanged
+      State = cbChecked
+      TabOrder = 1
+    end
+    object chkFilterNotes: TCheckBox
+      Left = 158
+      Height = 23
+      Top = 8
+      Width = 56
+      Caption = 'Notes'
+      Checked = True
+      OnChange = OnFilterChanged
+      State = cbChecked
+      TabOrder = 2
+    end
+    object chkFilterErrors: TCheckBox
+      Left = 222
+      Height = 23
+      Top = 8
+      Width = 52
+      Caption = 'Erros'
+      Checked = True
+      OnChange = OnFilterChanged
+      State = cbChecked
+      TabOrder = 3
+    end
+    object chkGroupByFile: TCheckBox
+      Left = 284
+      Height = 23
+      Top = 8
+      Width = 136
+      Caption = 'Agrupar por Arquivo'
+      Checked = True
+      OnChange = OnFilterChanged
+      State = cbChecked
+      TabOrder = 4
+    end
+    object edtSearch: TEdit
+      Left = 430
+      Height = 25
+      Top = 6
+      Width = 240
+      OnChange = OnFilterChanged
+      TabOrder = 5
+      TextHint = 'Filtrar por texto, unit ou código...'
+    end
+    object btnReload: TButton
+      Left = 678
+      Height = 27
+      Top = 5
+      Width = 94
+      Caption = 'Recarregar'
+      OnClick = btnReloadClick
+      TabOrder = 6
+    end
+    object btnClear: TButton
+      Left = 778
+      Height = 27
+      Top = 5
+      Width = 66
+      Caption = 'Limpar'
+      OnClick = btnClearClick
+      TabOrder = 7
+    end
+    object btnExport: TButton
+      Left = 850
+      Height = 27
+      Top = 5
+      Width = 86
+      Caption = 'Exportar'
+      OnClick = btnExportClick
+      TabOrder = 8
+    end
+  end
+  object tvDiagnostics: TTreeView
+    Left = 0
+    Height = 294
+    Top = 110
+    Width = 1000
+    Align = alClient
+    HideSelection = False
+    PopupMenu = popTree
+    ReadOnly = True
+    RowSelect = True
+    TabOrder = 2
+    OnDblClick = tvDiagnosticsDblClick
+    OnSelectionChanged = tvDiagnosticsSelectionChanged
+    Options = [tvoAutoItemHeight, tvoHideSelection, tvoKeepCollapsedNodes, tvoReadOnly, tvoRowSelect, tvoShowButtons, tvoShowLines, tvoShowRoot, tvoToolTips, tvoThemedDraw]
+  end
+  object splInspector: TSplitter
+    Cursor = crVSplit
+    Left = 0
+    Height = 6
+    Top = 404
+    Width = 1000
+    Align = alBottom
+    ResizeAnchor = akBottom
+  end
+  object pnlInspector: TPanel
+    Left = 0
+    Height = 270
+    Top = 410
+    Width = 1000
+    Align = alBottom
+    BevelOuter = bvLowered
+    ClientHeight = 270
+    ClientWidth = 1000
+    Color = clWindow
+    Constraints.MinHeight = 220
+    ParentBackground = False
+    ParentColor = False
+    TabOrder = 4
+    object pnlInspHeader: TPanel
+      Left = 1
+      Height = 52
+      Top = 1
+      Width = 794
+      Align = alTop
+      BevelOuter = bvNone
+      ClientHeight = 52
+      ClientWidth = 794
+      TabOrder = 0
+      object lblInspLocation: TLabel
+        Left = 10
+        Height = 16
+        Top = 4
+        Width = 774
+        Anchors = [akTop, akLeft, akRight]
+        Caption = 'Nenhum item selecionado'
+        Font.Height = -12
+        Font.Style = [fsBold]
+        ParentColor = False
+      end
+      object lblInspMessage: TLabel
+        Left = 10
+        Height = 15
+        Top = 20
+        Width = 774
+        Anchors = [akTop, akLeft, akRight]
+        Caption = 'Selecione uma mensagem para consultar o catálogo Firebird 5.0 ou gerar diagnóstico via IA Ollama.'
+        Font.Color = clWindowText
+        Font.Height = -11
+        ParentColor = False
+      end
+      object lblDBStatus: TLabel
+        Left = 10
+        Height = 15
+        Top = 36
+        Width = 170
+        Caption = '🔥 Firebird 5.0: Conectando...'
+        Font.Color = 10040115
+        Font.Height = -11
+        Font.Style = [fsBold]
+        ParentColor = False
+      end
+      object lblAIStatus: TLabel
+        Left = 200
+        Height = 15
+        Top = 36
+        Width = 200
+        Caption = '🤖 Ollama: qwen2.5-coder:3b'
+        Font.Color = 13382400
+        Font.Height = -11
+        Font.Style = [fsBold]
+        ParentColor = False
+      end
+    end
+    object pgcInspector: TPageControl
+      Left = 1
+      Height = 216
+      Top = 53
+      Width = 794
+      ActivePage = tsFirebird
+      Align = alClient
+      TabIndex = 0
+      TabOrder = 1
+      object tsFirebird: TTabSheet
+        Caption = '💡 Catálogo Firebird 5.0'
+        ClientHeight = 186
+        ClientWidth = 786
+        object memoFullGuide: TMemo
+          Left = 0
+          Height = 186
+          Top = 0
+          Width = 786
+          Align = alClient
+          BorderStyle = bsNone
+          Color = 16119285
+          Font.Height = -11
+          Font.Name = 'Sans'
+          ReadOnly = True
+          ScrollBars = ssAutoVertical
+          TabOrder = 0
+        end
+      end
+      object tsOllama: TTabSheet
+        Caption = '🤖 Solução com IA (Ollama / Gemini)'
+        ClientHeight = 186
+        ClientWidth = 786
+        object pnlAIToolbar: TPanel
+          Left = 0
+          Height = 32
+          Top = 0
+          Width = 786
+          Align = alTop
+          BevelOuter = bvNone
+          ClientHeight = 32
+          ClientWidth = 786
+          TabOrder = 0
+          object btnApplyAICode: TButton
+            Left = 4
+            Height = 26
+            Top = 3
+            Width = 240
+            Caption = '⚡ Aplicar este Código no Editor'
+            Font.Style = [fsBold]
+            OnClick = btnApplyAICodeClick
+            TabOrder = 0
+          end
+          object btnCopyAICode: TButton
+            Left = 250
+            Height = 26
+            Top = 3
+            Width = 140
+            Caption = '📋 Copiar Código'
+            OnClick = btnCopyAICodeClick
+            TabOrder = 1
+          end
+        end
+        object memoAIResult: TMemo
+          Left = 0
+          Height = 154
+          Top = 32
+          Width = 786
+          Align = alClient
+          BorderStyle = bsNone
+          Color = clWhite
+          Font.Height = -11
+          Font.Name = 'Monospace'
+          ReadOnly = True
+          ScrollBars = ssAutoVertical
+          TabOrder = 1
+        end
+      end
+    end
+    object pnlInspButtons: TPanel
+      Left = 795
+      Height = 268
+      Top = 1
+      Width = 204
+      Align = alRight
+      BevelOuter = bvNone
+      ClientHeight = 268
+      ClientWidth = 204
+      TabOrder = 2
+      object btnQuickFix: TButton
+        Left = 6
+        Height = 28
+        Top = 4
+        Width = 192
+        Caption = '⚡ Aplicar Quick Fix'
+        Enabled = False
+        Font.Style = [fsBold]
+        OnClick = btnQuickFixClick
+        TabOrder = 0
+      end
+      object btnOllamaAI: TButton
+        Left = 6
+        Height = 28
+        Top = 34
+        Width = 192
+        Caption = '🤖 Diagnóstico Ollama'
+        Font.Style = [fsBold]
+        OnClick = btnOllamaAIClick
+        TabOrder = 1
+      end
+      object btnGeminiAI: TButton
+        Left = 6
+        Height = 28
+        Top = 64
+        Width = 192
+        Caption = '✨ Diagnóstico Gemini'
+        Font.Style = [fsBold]
+        OnClick = btnGeminiAIClick
+        TabOrder = 2
+      end
+      object btnGoToCode: TButton
+        Left = 6
+        Height = 26
+        Top = 94
+        Width = 192
+        Caption = 'Abrir no Editor (Enter)'
+        OnClick = btnGoToCodeClick
+        TabOrder = 3
+      end
+      object btnCopyDetails: TButton
+        Left = 6
+        Height = 26
+        Top = 122
+        Width = 192
+        Caption = 'Copiar Detalhes'
+        OnClick = btnCopyDetailsClick
+        TabOrder = 4
+      end
+      object btnConfigDB: TButton
+        Left = 6
+        Height = 26
+        Top = 150
+        Width = 192
+        Caption = 'Configurações...'
+        OnClick = btnConfigDBClick
+        TabOrder = 5
+      end
+      object btnReconnectDB: TButton
+        Left = 6
+        Height = 26
+        Top = 178
+        Width = 192
+        Caption = 'Reconectar Firebird'
+        OnClick = btnReconnectDBClick
+        TabOrder = 6
+      end
+    end
+  end
+  object saveDialogExport: TSaveDialog
+    Title = 'Exportar Relatório de Diagnósticos'
+    DefaultExt = '.csv'
+    Filter = 'Arquivo CSV (*.csv)|*.csv|Arquivo JSON (*.json)|*.json|Todos os Arquivos (*.*)|*.*'
+    Left = 672
+    Top = 200
+  end
+  object popExport: TPopupMenu
+    Left = 752
+    Top = 200
+    object miExportCSV: TMenuItem
+      Caption = 'Exportar para CSV (*.csv)'
+      OnClick = miExportCSVClick
+    end
+    object miExportJSON: TMenuItem
+      Caption = 'Exportar para JSON (*.json)'
+      OnClick = miExportJSONClick
+    end
+  end
+  object popTree: TPopupMenu
+    Left = 400
+    Top = 260
+    object miTreeQuickFix: TMenuItem
+      Caption = '⚡ Aplicar Quick Fix'
+      OnClick = btnQuickFixClick
+    end
+    object miTreeOllamaAI: TMenuItem
+      Caption = '🤖 Diagnóstico com Ollama'
+      OnClick = btnOllamaAIClick
+    end
+    object miTreeGeminiAI: TMenuItem
+      Caption = '✨ Diagnóstico com Gemini'
+      OnClick = btnGeminiAIClick
+    end
+    object miTreeGoToCode: TMenuItem
+      Caption = 'Abrir no Editor (Enter)'
+      OnClick = btnGoToCodeClick
+    end
+    object miTreeSep1: TMenuItem
+      Caption = '-'
+    end
+    object miTreeCopyMsg: TMenuItem
+      Caption = 'Copiar Mensagem e Detalhes'
+      OnClick = btnCopyDetailsClick
+    end
+  end
+end
